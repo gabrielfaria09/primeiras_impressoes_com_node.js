@@ -1,0 +1,25 @@
+{
+  "name": "node-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node servidor.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielfaria09/primeiras_impressoes_com_node.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/gabrielfaria09/primeiras_impressoes_com_node.js/issues"
+  },
+  "homepage": "https://github.com/gabrielfaria09/primeiras_impressoes_com_node.js#readme",
+  "dependencies": {
+    "fastify": "^5.11.3"
+  }
+}

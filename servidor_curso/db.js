@@ -1,7 +1,4 @@
 import 'dotenv/config';
-import postgres from 'postgres';
+import { neon } from '@neondatabase/serverless';
 
-const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
-const URL = `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?options=project%3D${ENDPOINT_ID}`;
-
-const sql = postgres(URL, { ssl: 'require' });
+export const sql = neon(process.env.DATABASE_URL);

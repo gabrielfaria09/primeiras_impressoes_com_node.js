@@ -49,7 +49,6 @@ servidor.delete("/videos/:id", async (request, reply) => {
 });
 
 servidor.listen({
-  port: 3000,
+  port: process.env.PORT ?? 3000,
 });
 
-console.log("Servidor rodando na porta 3000 (http://localhost:3000)");

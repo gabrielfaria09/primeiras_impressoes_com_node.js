@@ -4,8 +4,17 @@ import { Database } from "./database.js";
 const servidor = fastify();
 const database = new Database();
 
-servidor.put("/videos/:id", () => {
-  return "Hello World";
+servidor.put("/videos/:id", (request, reply) => {
+  const videoId = request.params.id;
+  const { title, description, duration } = request.body;
+
+  database.update(videoId, {
+    title,
+    description,
+    duration
+  });
+
+  return reply.status(204).send();
 });
 
 servidor.post("/videos", (request, reply) => {
@@ -20,16 +29,22 @@ servidor.post("/videos", (request, reply) => {
   return reply.status(201).send();
 });
 
-servidor.get("/videos", () => {
-  const videos = database.list();
+servidor.get("/videos", (request) => {
+  const search = request.query.search;
+
+  const videos = database.list(search);
 
   console.log(videos);
 
   return videos;
 });
 
-servidor.delete("/videos/:id", () => {
-  return "Hello Node.js";
+servidor.delete("/videos/:id", (request, reply) => {
+  const videoId = request.params.id;
+
+  database.delete(videoId);
+
+  return reply.status(204).send();
 });
 
 servidor.listen({

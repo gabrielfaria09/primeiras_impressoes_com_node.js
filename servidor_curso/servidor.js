@@ -4,6 +4,7 @@ import { DatabasePostgres } from "./database-postgres.js";
 
 const servidor = fastify();
 const database = new DatabasePostgres();
+const PORT = process.env.PORT ?? 3333;
 
 servidor.put("/videos/:id", async (request, reply) => {
   const videoId = request.params.id;
@@ -49,6 +50,8 @@ servidor.delete("/videos/:id", async (request, reply) => {
 });
 
 servidor.listen({
-  port: process.env.PORT ?? 3000,
+  host: '0.0.0.0',
+  port: PORT,
+}).then(() => {
+  console.log(`HTTP Server Running on port ${PORT}`);
 });
-

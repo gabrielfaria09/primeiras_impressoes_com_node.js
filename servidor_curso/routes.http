@@ -1,19 +1,19 @@
-POST http://localhost:3000/videos
+POST https://primeiras-impressoes-com-node-js.onrender.com/videos
 Content-Type: application/json
 
 {
-    "title": "Video node",
+    "title": "Video 01",
     "description": "Esse é o primeiro vídeo",
     "duration": 180
 }
 
 ###
 
-GET http://localhost:3000/videos
+GET https://primeiras-impressoes-com-node-js.onrender.com/videos
 
 ###
 
-PUT http://localhost:3000/videos/9ad2feb6-f4e4-46a8-8276-0a9e85b6d678
+PUT https://primeiras-impressoes-com-node-js.onrender.com/videos/9547506c-757d-489b-b03c-8f6c331ca55d
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/videos/9ad2feb6-f4e4-46a8-8276-0a9e85b6d678
+DELETE https://primeiras-impressoes-com-node-js.onrender.com/videos/9547506c-757d-489b-b03c-8f6c331ca55d
